@@ -7,3 +7,6 @@ python-dotenv
 webvtt-py
 tenacity
 pytest
+sentence-transformers
+numpy
+langsmith

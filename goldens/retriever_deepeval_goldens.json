@@ -1,0 +1,92 @@
+[
+  {
+    "id": "g001",
+    "query": "Will DeepEval's wider adoption and superior regression suite establish it as the NLM benchmark standard?",
+    "ideal_answer": "Yes, the context indicates DeepEval's wider adoption across diverse applications (including non-LLM and image-based) and its superior regression testing capabilities position it to likely become the NLM evaluation benchmark standard within 1-2 years, which is why the speaker advocates focusing on DeepEval over Ragas.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g002",
+    "query": "Imagine a multi-turn chatbot's workflow failing. What workflow-level problems could cause this?",
+    "ideal_answer": "The context states that a multi-turn chatbot can have problems at the workflow level, but it does not specify what those workflow-level problems are. It only mentions that if the workflow level is fine, evaluation moves to the application level (latency, token cost, time to first token).",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g003",
+    "query": "Contrast evaluation of LLM non-deterministic outputs with deterministic software testing.",
+    "ideal_answer": "LLM evaluation must handle non-deterministic outputs where identical inputs produce varied but valid responses, requiring assessment of quality, relevance, and consistency across generations. Deterministic software testing verifies exact correctness against a single expected output (e.g., 2+2=4), focusing solely on functional accuracy.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g004",
+    "query": "Evals drive LLM deployment choice: proprietary API vs. self-hosted open-source.",
+    "ideal_answer": "Model evaluations determine deployment strategy by quantifying hallucination rates, safety, and jailbreak vulnerability. These metrics inform the choice between proprietary APIs (e.g., Claude) and self-hosted open-source models (e.g., DeepSeq), weighing factors like cost, capability, and control.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g005",
+    "query": "How does Langsmith's LLM-as-judge pipeline evaluate PII leakage among security templates?",
+    "ideal_answer": "Langsmith provides security evaluator templates, including a PII leakage evaluator that uses LLM-as-judge to compute and verify that the chatbot does not leak personal information.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g006",
+    "query": "Why must chatbot logging be non-blocking for latency and durable, queryable via tools like Langsmith?",
+    "ideal_answer": "Chatbot logging must be non-blocking to prevent increased latency by running logging concurrently with the conversation, ensuring the chatbot's performance isn't hindered. It must also be durable and queryable so that all interactions and metadata are reliably stored and can be analyzed using tools like Langsmith for observability and debugging.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g007",
+    "query": "How does Dev Priya define human-created golden datasets and graded relevancy via docs 101/103 retrieval?",
+    "ideal_answer": "Dev Priya defines golden datasets as human-created, not programmatic. For graded relevancy, there are two relevant documents (101 and 103) in the vector database; retrieving both yields full relevance, retrieving one yields half relevance, and retrieving none yields zero relevance.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g008",
+    "query": "Why might RAG fail despite passing evals when retriever fetches top-5 docs for course duration?",
+    "ideal_answer": "Even if retriever and generator pass individual evaluations, RAG can fail end-to-end because: (1) The top-5 retrieved documents (K=5) may not contain the answer to the specific query (e.g., course duration), despite being 'relevant' in general; (2) The generator might hallucinate or fail to extract the correct answer from the retrieved context; (3) Component-level evals don't test the full pipeline interaction, such as whether retrieved context actually resolves the user's question.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g009",
+    "query": "How does outdated multi-agent workshop relate to voice AI agents workshop and graph RAG coverage?",
+    "ideal_answer": "The multi-agent architecture workshop is planned for next month as a separate session from this month's voice AI agents workshop, though the multi-agent content is noted as 'a bit out of date.' Graph RAG was already covered in a previous advanced session, per Himanshu.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g010",
+    "query": "Explain how complexity-based routing manages latency amid dynamic traffic for research assistants.",
+    "ideal_answer": "Complexity-based routing directs simple queries to a fast, non-reasoning model and complex queries to a slower reasoning model. To manage latency under dynamic traffic, the system can adjust routing thresholds based on real-time load (e.g., peak vs. low hours), sending more queries to the faster model during high traffic to keep latency low. For research assistants, the acceptable latency target determines how aggressively to route to the reasoning model.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g011",
+    "query": "Compare Dec. course additions beyond LLMOps & Context Eng. to Fine Tuning timeline.",
+    "ideal_answer": "By December, 4 total new courses are expected (including LLMOps and Context Engineering), meaning 2 additional courses beyond those two. The LLM Fine Tuning course is planned but will likely start 2-3 months after the current pipeline completes, placing it after December.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g012",
+    "query": "How does OpenRouter's API offer Kimi K3, Terra, Sonnet with LangChain integration and free credits?",
+    "ideal_answer": "OpenRouter provides a unified API to access multiple models like Kimi K3, Terra, and Sonnet. It integrates directly with LangChain, allowing you to use any model through LangChain's interface. OpenRouter offers free credits to test 1-2 models, but running all models may require payment (around $5).",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g013",
+    "query": "How does Nov AI track completion align with H1 LLM builder curriculum?",
+    "ideal_answer": "The plan is to complete the AI engineering track by November, after which the LLM builder curriculum (covering pre-training, data preparation, tokenization, fine-tuning, etc.) will be delivered in the first 6 months of the next year (H1), making the overall campusX offering holistic with ML, deep learning, LLM gen AI, and building components.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g014",
+    "query": "Compare LLM evals with criteria to wipe testing without criteria.",
+    "ideal_answer": "LLM evals with criteria are systematic, repeatable tests that evaluate LLM applications against clear, defined standards, enabling proper evaluation. Wipe testing without criteria lacks defined standards, making it ad-hoc and unsystematic, essentially just informal testing without structured assessment.",
+    "source": "TODO-verify"
+  },
+  {
+    "id": "g015",
+    "query": "If you swap retrievers tomorrow, how does a real-chat dataset keep eval repeatable?",
+    "ideal_answer": "A real-chat dataset serves as a fixed benchmark of real user interactions. By evaluating any system version (including different retrievers, models, prompts, or chunking strategies) against this same dataset, you ensure consistent, repeatable comparisons across changes.",
+    "source": "TODO-verify"
+  }
+]
