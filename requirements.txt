@@ -1,0 +1,9 @@
+langchain-core
+langchain-chroma
+chromadb
+langchain-text-splitters
+langchain-nvidia-ai-endpoints
+python-dotenv
+webvtt-py
+tenacity
+pytest
