@@ -29,13 +29,13 @@ import json
 REQUIRED_FIELDS = ("query", "ideal_answer")
 
 
-def load_goldens(path):
+def load_goldens(path, required=REQUIRED_FIELDS):
     with open(path, encoding="utf-8") as f:
         goldens = json.load(f)
 
     # fail early if a golden file doesn't match the expected schema
     for i, g in enumerate(goldens):
-        missing = [k for k in REQUIRED_FIELDS if k not in g]
+        missing = [k for k in required if k not in g]
         if missing:
             raise ValueError(f"{path}: golden #{i} is missing {missing}")
 
