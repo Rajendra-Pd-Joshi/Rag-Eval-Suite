@@ -5,3 +5,4 @@ eval_runs/
 __pycache__/
 *.pyc
 .pytest_cache/
+UNKNOWN.egg-info/
